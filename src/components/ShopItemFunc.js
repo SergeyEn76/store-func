@@ -1,22 +1,22 @@
-import React from "react";
-
 function ShopItemFunc(prop) {
     const { item } = prop;
 
-    return React.createElement('div', { className: 'main-content' },
-        React.createElement('h2', null, item.brand),
-        React.createElement('h1', null, item.title),
-        React.createElement('h3', null, item.description),
-        React.createElement('div', { class: 'description' }, item.descriptionFull),
-        React.createElement('div', { class: 'highlight-window mobile' },
-            React.createElement('div', { className: 'highlight-overlay' })
-        ),
-        React.createElement('div', { className: 'divider' }),
-        React.createElement('div', { className: 'purchase-info' },
-            React.createElement('div', { className: 'price' }, item.currency, item.price.toFixed(2)),
-            React.createElement('button', null, 'Добавить в корзину')
-        ),
-    )
+    return (
+        <div className="main-content">
+            <h2>{ item.brand }</h2>
+            <h1>{ item.title }</h1>
+            <h3>{ item.description }</h3>
+            <div className="description">{ item.descriptionFull }</div>
+            <div className="highlight-window mobile">
+                <div className="highlight-overlay"></div>
+            </div>
+            <div className="divider"></div>
+            <div className="purchase-info">
+                <div className="price">{ item.currency } { item.price.toFixed(2) }</div>
+                <button>Добавить в корзину</button>
+            </div>
+        </div>
+    );
 }
 
 export default ShopItemFunc;
